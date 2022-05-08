@@ -1,6 +1,6 @@
 /**
- * @jest-environment jsdom
- */
+** @jest-environment jsdom
+**/
 const ui = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
