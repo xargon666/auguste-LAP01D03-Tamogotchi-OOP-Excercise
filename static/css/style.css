@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family:'Space Grotesk', Courier, monospace;
+    width:100vw;
+    height:auto;
+}
+
+body header {
+    padding:1rem;
+}
+
+body #main{
+padding:1rem;
+background:blue;
+width:inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  header {
+    background: #222;
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #eee;
+    color: #121212;
+  }
+
+  
+  header {
+    background: #ddd;
+    }
+}
