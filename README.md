@@ -31,4 +31,4 @@ I plan on adding:
 - Add failure state: Death!
 - Add sickness from hunger and medicine to cure.
 
-![Depfu](https://img.shields.io/depfu/username/repo)
+![Depfu](https://img.shields.io/depfu/xargon666/auguste-LAP01D03-Tamogotchi-OOP-Excercise.git)
