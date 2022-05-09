@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify ./static/js/app.js > ./bundle.js"
+    "bundle": "browserify ./static/js/app.js > ./bundle.js",
+    "start": "node ./static/js/index.js",
+    "dev": "nodemon ./static/js/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
     "readline": "^1.3.0"
   },
   "devDependencies": {
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.0",
+    "nodemon": "^2.0.16"
   }
 }
