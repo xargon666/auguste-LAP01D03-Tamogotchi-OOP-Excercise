@@ -1,4 +1,4 @@
-const Pet = require('./pet.js')
+const Pet = require('./pet')
 const ui = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -122,5 +122,6 @@ Option: `,
 } // end of startGame class
 
 const tamogotchi = new Pet("", 3, 10);
+
 
 module.exports = { TamogotchiGame };

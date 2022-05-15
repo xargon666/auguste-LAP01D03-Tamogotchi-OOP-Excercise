@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=ls, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/style.css">
-    <script src="./bundle.js"></script>
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <script defer src="./static/js/terminal.js"></script>
+    <script defer src="./static/js/index.js"></script>
     <title>Chrispy Tamogotchi</title>
     <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
 </head>
@@ -15,8 +18,7 @@
         <h2>Tamogotchi Game</h2>
     </header>
     <section id="main">
-        <p>Hello WOrld</p>
-        <div class="tamogotchi"></div>
+        <div id="terminal"></div>
     </section>
 </body>
 </html>
