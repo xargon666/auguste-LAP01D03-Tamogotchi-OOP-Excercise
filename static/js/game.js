@@ -1,4 +1,4 @@
-const Pet = require('./pet')
+const Pet = require("./pet");
 const ui = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -7,7 +7,7 @@ const ui = require("readline").createInterface({
 class TamogotchiGame {
   run() {
     console.clear();
-    console.log(`Welcome to the Tamogotchi game!\n\n`);
+    console.log(`Welcome to the Tamogotchi game!\n`);
     this.question1();
   }
 
@@ -15,15 +15,16 @@ class TamogotchiGame {
     ui.question("What is your new Tamogotchi called?\n", (input) => {
       try {
         tamogotchi.strName = input;
+        this.contine();
       } catch (err) {
         this.error(err);
         this.question1();
       }
-      this.options();
     });
   }
   options() {
-    ui.question(`Choose from the following options:
+    ui.question(
+      `Choose from the following options:
 
     1. Check your Tamogotchi's vital stats.
     2. Feed Tamogotchi.
@@ -37,42 +38,16 @@ class TamogotchiGame {
           switch (parseInt(input)) {
             case 1: // Check your Tamogotchi's vital stats.
               console.log(
-`${tamogotchi.strName}
+                `${tamogotchi.strName}
 ${tamogotchi.happiness}
 ${tamogotchi.hunger}
-`);
+`
+              );
               // add get/set sickness to Pet class
               break;
             case 2: // Feed Tamogotchi.
               console.clear();
-              ui.question(
-`What do you want to feed the Tamogotchi?
-
-1. Pizza
-2. Potato
-
-Option: `,
-                (input) => {
-                  try {
-                    switch (parseInt(input)) {
-                      case 1:
-                        console.clear();
-                        console.log(tamogotchi.feed("pizza"));
-                        break;
-                      case 2:
-                        console.clear();
-                        console.log(tamogotchi.feed("potato"));
-                        break;
-                      default:
-                        throw new Error(`${input} was an invalid choice`);
-                        
-                    } 
-                  } catch (err) {
-                    // end case 2 try
-                    this.error(err);
-                  } 
-                } 
-              ); // close case 2 question
+              this.feed()
               break;
             case 3: // Play with Tamogotchi
               break;
@@ -82,26 +57,61 @@ Option: `,
               break;
             default:
               throw new Error(`${input} was an invalid choice`);
-          } 
+              break;
+          }
         } catch (err) {
           this.error(err);
-        } 
-        this.contine();   
-      } 
+        }
+      }
     ); // close question
   } // end options
 
-  contine(){
+  feed() {
+    ui.question(
+      `What do you want to feed the Tamogotchi?
+      
+          1. Pizza
+          2. Potato
+      
+          Option: `,
+      (input) => {
+        try {
+          switch (parseInt(input)) {
+            case 1:
+              console.clear();
+              console.log(tamogotchi.feed("pizza"));
+              this.contine();
+              break;
+            case 2:
+              console.clear();
+              console.log(tamogotchi.feed("potato"));
+              this.contine();
+              break;
+            default:
+              throw new Error(`${input} was an invalid choice`);
+              break;
+          }
+        } catch (err) {
+          // end case 2 try
+          this.error(err);
+        }
+      }
+    ); // close case 2 question
+  }
+
+  
+
+  contine() {
     console.log(`
     
     Press any key to continue...
 
-    `)
-    
-    process.stdin.once('data',()=>{
+    `);
+
+    process.stdin.once("data", () => {
       console.clear();
       this.options();
-    })
+    });
   }
 
   error(err) {
@@ -122,6 +132,5 @@ Option: `,
 } // end of startGame class
 
 const tamogotchi = new Pet("", 3, 10);
-
 
 module.exports = { TamogotchiGame };

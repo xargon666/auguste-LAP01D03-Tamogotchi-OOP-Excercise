@@ -44,7 +44,7 @@ class Pet {
   Happiness rating: ${this._happiness}`;
           case this._happiness > 5:
             return `
-            the unnamned tamogotchi is happy! 
+  the unnamned tamogotchi is happy! 
   Happiness rating: ${this._happiness}`;
           default:
             return `
@@ -72,7 +72,8 @@ class Pet {
     }
   // ******************************* Hunger *********************************
     get hunger() {
-      return `${this._strName}'s hunger level: ${this._hunger}`;
+      return `
+  ${this._strName}'s hunger level: ${this._hunger}`;
     }
     set hunger(val) {
       switch (val) {
