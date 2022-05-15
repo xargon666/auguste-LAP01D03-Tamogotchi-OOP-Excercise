@@ -26,30 +26,30 @@ class TamogotchiGame {
     ui.question(`Choose from the following options:
 
     1. Check your Tamogotchi's vital stats.
-    2. Feed your Tamogotchi.
-    3. Play with your Tamogotchi
-    4. Give the Tamogotchi medicine.
+    2. Feed Tamogotchi.
+    3. Play with Tamogotchi
+    4. Give Tamogotchi medicine.
     5. Give your Tamogotchi to your mum to look after while you go to school.
     
     Option: `,
       (input) => {
         try {
           switch (parseInt(input)) {
-            case 1:
-              console.log(`
-${tamogotchi.strName}
+            case 1: // Check your Tamogotchi's vital stats.
+              console.log(
+`${tamogotchi.strName}
 ${tamogotchi.happiness}
 ${tamogotchi.hunger}
-              `);
+`);
               // add get/set sickness to Pet class
               break;
-            case 2:
+            case 2: // Feed Tamogotchi.
               console.clear();
               ui.question(
-                `What do you want to feed the Tamogotchi?
-          
-          1. Pizza
-          2. Potato
+`What do you want to feed the Tamogotchi?
+
+1. Pizza
+2. Potato
 
 Option: `,
                 (input) => {
@@ -74,11 +74,11 @@ Option: `,
                 } 
               ); // close case 2 question
               break;
-            case 3:
+            case 3: // Play with Tamogotchi
               break;
-            case 4:
+            case 4: // Give Tamogotchi medicine.
               break;
-            case 5:
+            case 5: // Give your Tamogotchi to your mum
               break;
             default:
               throw new Error(`${input} was an invalid choice`);
