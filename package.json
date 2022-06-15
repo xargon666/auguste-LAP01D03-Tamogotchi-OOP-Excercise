@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "browsify": "^0.0.4",
-    "concurrently": "^7.1.0",
+    "concurrently": "^7.2.2",
     "nodemon": "^2.0.16",
     "watchify": "^4.0.0"
   }
